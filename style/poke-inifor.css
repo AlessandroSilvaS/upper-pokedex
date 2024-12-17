@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.after-template{
+    width: 100%;
+}
+.after-template .container-of-box-informations{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+.after-template .container-of-box-informations .box-information-nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0178bd;
+    font-size: 40px;
+}
+.after-template .container-of-box-informations .box-information-nav .box-information-nav-title{
+    width: 50%;
+    background-color: #e1d999;
+    padding: 10px;
+    border: none;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color: #fff;
+}
+.after-template .container-of-box-informations .box-information-nav button{
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer
+}
+.after-template .container-of-box-informations .box-information-nav button .link-button{
+    text-decoration: none;
+    color: #000;
+}
+.after-template .container-of-box-informations .box-information-main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.after-template .container-of-box-informations .box-information-main .box-information-image{
+    width: 50%;
+    height: 30em;
+}
+.after-template .container-of-box-informations .box-information-main .box-information-list{
+    width: 50%;
+    height: 30em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.after-template .container-of-box-informations .box-information-main .box-information-list .information-list{
+    width: 50%;
+    height: 90%;
+    margin-top: 20px;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+.after-template .container-of-box-informations .box-information-main .box-information-list .information-list .list-icon{
+    font-size: 36px;
+    list-style-type: none;
+}
+.box-information-atacks{
+    width: 100%;
+}
+.box-information-atacks .box-information-atacks-title{
+    text-align: center;
+    font-size: 42px;
+}
+.box-information-atacks .box-information-atacks-list{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.box-information-atacks .box-information-atacks-list .box-information-atacks-item{
+    list-style-type: none;
+    font-size: 32px;
+}
