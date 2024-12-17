@@ -4,14 +4,14 @@ class Pokemon{
     number: number;
     namePokemon: string;
     type: string;
-    weigth: number;
+    weight: number;
     heigth: number;
 
-    constructor(number: number, namePokemon: string, type: string, weigth: number, heigth: number){
+    constructor(number: number, namePokemon: string, type: string, weight: number, heigth: number){
         this.number = number;
         this.namePokemon = namePokemon;
         this.type = type;
-        this.weigth = weigth;
+        this.weight = weight;
         this.heigth = heigth
     }
 
@@ -20,18 +20,16 @@ class Pokemon{
     }
 
     async move(moviment: string){
-        const texts:Array<string | any> = [
-        `${this.namePokemon} usou ${moviment}`,
-        await this.delay(2000),
-        `${chooseType(this.type)}`,
-        await this.delay(2000),
-        'Uau! Foi super efetivo!'
+        const lines: string[] = [
+            `${this.namePokemon} usou ${moviment}!`,
+            `${chooseType('fire')}`,
+            "Uau! em cheio..."
         ]
 
-        return texts
+        lines.forEach( async (line) => {
+            await this.delay(5000)
+            return line
+        })
     }
 }
 
-
-const charmander = new Pokemon(3, 'charmander', 'fire', 30, 50)
-charmander.move('fire ball')
