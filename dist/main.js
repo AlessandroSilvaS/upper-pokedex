@@ -1,12 +1,26 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = __importDefault(require("axios"));
-axios_1.default.get('https://pokeapi.co/api/v2/pokemon/ditto').then((response) => {
-    console.log(response.data);
-}).catch((error) => {
-    console.log(error);
+import { Pokemon } from "./pokemon.js";
+async function capture() {
+    try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/pikachu`);
+        if (response.ok) {
+            const data = await response.json();
+            return data;
+        }
+        else {
+            console.log("Error! Network fail");
+        }
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+capture().then((captured) => {
+    const myPokemon = new Pokemon(captured.id, captured.name, captured.types[0].type.name, captured.weight, captured.height);
+    const valuesPokemon = [];
+    const listDefaltValue = ['Number', 'Name', 'Type', 'Weight', "Height"];
+    const listOfValues = Array.from(document.querySelectorAll('.list-icon'));
+    valuesPokemon.push(myPokemon.number, myPokemon.namePokemon, myPokemon.type, myPokemon.weight, myPokemon.heigth);
+    const informationsOfPokemon = listOfValues.map((value, index) => {
+        return value.textContent = `${listDefaltValue[index]}: ${valuesPokemon[index]}`;
+    });
 });
-console.log('olá mundo!');

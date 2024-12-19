@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.chooseType = chooseType;
-function chooseType(typeOfPokemon) {
+export function chooseType(typeOfPokemon) {
     switch (typeOfPokemon) {
         case "normal":
             return "Boom!";

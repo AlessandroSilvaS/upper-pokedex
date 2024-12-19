@@ -1,6 +1,6 @@
 import { chooseType } from "./chooseType";
 
-class Pokemon{
+export class Pokemon{
     number: number;
     namePokemon: string;
     type: string;

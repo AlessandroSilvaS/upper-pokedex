@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const chooseType_1 = require("./chooseType");
-class Pokemon {
+import { chooseType } from "./chooseType.js";
+export class Pokemon {
     number;
     namePokemon;
     type;
@@ -20,7 +18,7 @@ class Pokemon {
     async move(moviment) {
         const lines = [
             `${this.namePokemon} usou ${moviment}!`,
-            `${(0, chooseType_1.chooseType)('fire')}`,
+            `${chooseType('fire')}`,
             "Uau! em cheio..."
         ];
         lines.forEach(async (line) => {
