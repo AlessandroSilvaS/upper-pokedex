@@ -54,6 +54,9 @@
     width: 50%;
     height: 30em;
 }
+.after-template .container-of-box-informations .box-information-main .box-information-image .image-pokemon{
+    width: 500px;
+}
 .after-template .container-of-box-informations .box-information-main .box-information-list{
     width: 50%;
     height: 30em;

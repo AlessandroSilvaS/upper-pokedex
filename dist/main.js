@@ -23,4 +23,10 @@ capture().then((captured) => {
     const informationsOfPokemon = listOfValues.map((value, index) => {
         return value.textContent = `${listDefaltValue[index]}: ${valuesPokemon[index]}`;
     });
+    const imagePokemon = document.getElementsByClassName("image-pokemon")[0];
+    imagePokemon.src = captured.sprites.front_default;
+    const atacksList = Array.from(document.querySelectorAll('.box-information-atacks-item'));
+    const atacksValues = atacksList.map((value, index) => {
+        return value.textContent = captured.abilities[index].ability.name;
+    });
 });
