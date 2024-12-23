@@ -1,8 +1,8 @@
 import { Pokemon } from "./pokemon";
-async function capture(){
+async function capture(pokemon:string){
     try {
         
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/pkaachu`);
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
     if(response.ok){
         const data = await response.json()
         return data
@@ -15,7 +15,8 @@ async function capture(){
     }
 }
 
-capture().then((captured) => {
+export function informationsOfTemplate(capturedPokemon:string){
+    capture(capturedPokemon).then((captured) => {
     const myPokemon = new Pokemon(captured.id, captured.name, captured.types[0].type.name, captured.weight, captured.height)
 
     const valuesPokemon: Array<string | number> = []
@@ -37,3 +38,4 @@ capture().then((captured) => {
         return value.textContent = captured.abilities[index].ability.name
     })
 })
+}
