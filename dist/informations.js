@@ -1,10 +1,14 @@
-import { informationsOfTemplate } from "./main.js";
-const nickNameOfUserInput = document.getElementById('nick');
-const pokemonNameOfUserInput = document.getElementById("pokemon");
-const ipOfTheMachineUser = document.getElementById("ip-machine");
-const inputSubmit = document.getElementById("ready");
-inputSubmit.addEventListener('click', () => {
-    let pokemonNameOfUserString = pokemonNameOfUserInput.value;
-    informationsOfTemplate(pokemonNameOfUserString);
-    window.location.href = 'http://127.0.0.1:5500/templates/poke-infor.html';
-});
+"use strict";
+// const nickNameOfUserInput = document.getElementById('nick') as HTMLInputElement
+// const pokemonNameOfUserInput = document.getElementById("pokemon") as HTMLInputElement
+// const ipOfTheMachineUser = document.getElementById("ip-machine") as HTMLInputElement
+// const inputSubmit = document.getElementById("ready") as HTMLInputElement
+// export function mailInformations(value:string){
+//     let mailPokemonName:string = ''
+//     mailPokemonName = value
+//     return mailPokemonName
+// }
+// inputSubmit.addEventListener('click', () => {
+//     if(pokemonNameOfUserInput.value && pokemonNameOfUserInput.value != ""){
+//     }
+// })
