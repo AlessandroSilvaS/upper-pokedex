@@ -1,6 +1,9 @@
 import { Pokemon } from "./pokemon";
 
-const pageId = document.body.id
+const firstTemplate = document.querySelector('.first-template') as HTMLDivElement
+const afterTemplate = document.querySelector('.after-template') as HTMLDivElement
+const inputSubmit = document.getElementById("ready") as HTMLInputElement
+const changePokemonButton = document.querySelector('.changePokemon')
 
 async function capture(pokemon:string){
     try {
@@ -17,36 +20,49 @@ async function capture(pokemon:string){
         console.log(error)
     }
 }
+function changeTemplate(){
+    if(firstTemplate.style.display != 'none'){
 
-if(pageId === 'start'){
+        firstTemplate.style.display = 'none';
+        afterTemplate.style.display = 'block';
 
-    const inputSubmit = document.getElementById("ready") as HTMLInputElement
+    }else{
 
-    inputSubmit.addEventListener('click', async () => {
-        const pokemonNameOfUserInput = document.getElementById("pokemon") as HTMLInputElement
+        firstTemplate.style.display = 'block';
+        afterTemplate.style.display = 'none';
 
-        await capture(pokemonNameOfUserInput.value).then((captured) => {
-            const myPokemon = new Pokemon(captured.id, captured.name, captured.types[0].type.name, captured.weight, captured.height)
+    }
+}
+changePokemonButton?.addEventListener('click', () => {
+    changeTemplate()
+})
+function getPokemon(){
+    
+    let pokemonNameOfUserInput = document.getElementById("pokemon") as HTMLInputElement
+    changeTemplate()
+    capture(pokemonNameOfUserInput.value).then((captured) => {
+        const myPokemon = new Pokemon(captured.id, captured.name, captured.types[0].type.name, captured.weight, captured.height)
         
-            const valuesPokemon: Array<string | number> = []
-            const listDefaltValue: string[] = ['Number', 'Name', 'Type', 'Weight', "Height"]
-            const listOfValues: HTMLUListElement[] = Array.from(document.querySelectorAll<HTMLUListElement>('.list-icon'))
+        const valuesPokemon: Array<string | number> = []
+        const listDefaltValue: string[] = ['Number', 'Name', 'Type', 'Weight', "Height"]
+        const listOfValues: HTMLUListElement[] = Array.from(document.querySelectorAll<HTMLUListElement>('.list-icon'))
         
-            valuesPokemon.push(myPokemon.number, myPokemon.namePokemon, myPokemon.type, myPokemon.weight, myPokemon.heigth)
+        valuesPokemon.push(myPokemon.number, myPokemon.namePokemon, myPokemon.type, myPokemon.weight, myPokemon.heigth)
         
-            const informationsOfPokemon: Array<String | number> = listOfValues.map((value, index) =>{
-                return value.textContent = `${listDefaltValue[index]}: ${valuesPokemon[index]}`
-            })
-        
-            const imagePokemon = document.getElementsByClassName("image-pokemon")[0] as HTMLImageElement
-            imagePokemon.src = captured.sprites.front_default
-        
-            const atacksList = Array.from(document.querySelectorAll('.box-information-atacks-item'))
-        
-            const atacksValues = atacksList.map((value, index) => {
-                return value.textContent = captured.abilities[index].ability.name
-            })
+        const informationsOfPokemon: Array<String | number> = listOfValues.map((value, index) =>{
+            return value.textContent = `${listDefaltValue[index]}: ${valuesPokemon[index]}`
         })
-        window.location.href = 'templates/poke-infor.html'
+        
+        const imagePokemon = document.getElementsByClassName("image-pokemon")[0] as HTMLImageElement
+        imagePokemon.src = captured.sprites.front_default
+        
+        const atacksList = Array.from(document.querySelectorAll('.box-information-atacks-item'))
+        
+        const atacksValues = atacksList.map((value, index) => {
+            return value.textContent = captured.abilities[index].ability.name
+        })
     })
 }
+inputSubmit.addEventListener('click', () => {
+    getPokemon()
+})

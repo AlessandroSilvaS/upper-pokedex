@@ -5,6 +5,7 @@
 }
 .after-template{
     width: 100%;
+    display: none;
 }
 .after-template .container-of-box-informations{
     width: 70%;

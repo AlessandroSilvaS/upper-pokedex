@@ -1,14 +1,12 @@
-"use strict";
-// const nickNameOfUserInput = document.getElementById('nick') as HTMLInputElement
-// const pokemonNameOfUserInput = document.getElementById("pokemon") as HTMLInputElement
-// const ipOfTheMachineUser = document.getElementById("ip-machine") as HTMLInputElement
-// const inputSubmit = document.getElementById("ready") as HTMLInputElement
-// export function mailInformations(value:string){
-//     let mailPokemonName:string = ''
-//     mailPokemonName = value
-//     return mailPokemonName
-// }
-// inputSubmit.addEventListener('click', () => {
-//     if(pokemonNameOfUserInput.value && pokemonNameOfUserInput.value != ""){
-//     }
-// })
+const nickNameOfUserInput = document.getElementById('nick');
+const pokemonNameOfUserInput = document.getElementById("pokemon");
+const ipOfTheMachineUser = document.getElementById("ip-machine");
+const inputSubmit = document.getElementById("ready");
+export let mailPokemonName = 'pikachu';
+function mailInformations() {
+    mailPokemonName = pokemonNameOfUserInput.value;
+    window.location.href = './poke-infor.html';
+}
+inputSubmit.addEventListener('click', () => {
+    mailInformations();
+});

@@ -3,17 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/start.css">
     <link rel="stylesheet" href="../style/poke-inifor.css">
     <title>Pokedex</title>
 </head>
 <body>
+    <section class="first-template">
+        <h1 class="first-title">Welcome to my pokemon game!</h1>
+        <h3 class="second-title">Let's start!</h3>
+        <div class="form-container">
+            <form class="form" action="" method="">
+                <label for="nick">Your nick name:</label>
+                    <input type="text" name="" id="nick" placeholder="Nick here...">
+                <label for="pokemon">Choose your pokemon:</label>
+                    <input type="text" name="" id="pokemon" placeholder="Pokemon name here..." required>
+                <label for="ip-machine">The ip of your machines's opponent:</label>
+                    <input type="text" name="" id="ip-machine" placeholder="Ip here..." required>
+                    <input type="submit" id="ready" value="I am ready">
+            </form>
+        </div>
+    </section>
     <section class="after-template">
         <div class="container-of-box-informations">
             <div class="box-information-nav">
                 <div class="box-information-nav-title">
                     <p>Pokemon Infor</p>
                 </div>
-                <button><a href="./start.html" class="link-button">Trocar pokemon?</a></button>
+                <button class="changePokemon">Trocar pokemon?</button>
             </div>
             <div class="box-information-main">
                 <div class="box-information-image">
