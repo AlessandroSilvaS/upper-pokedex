@@ -22,7 +22,7 @@ export class Pokemon{
     async move(moviment: string){
         const lines: string[] = [
             `${this.namePokemon} usou ${moviment}!`,
-            `${chooseType('fire')}`,
+            `${chooseType(this.type)}`,
             "Uau! em cheio..."
         ]
 

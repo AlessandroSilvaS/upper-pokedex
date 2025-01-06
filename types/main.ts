@@ -39,10 +39,9 @@ changePokemonButton?.addEventListener('click', () => {
 function getPokemon(){
     
     let pokemonNameOfUserInput = document.getElementById("pokemon") as HTMLInputElement
-    changeTemplate()
+    
     capture(pokemonNameOfUserInput.value).then((captured) => {
         const myPokemon = new Pokemon(captured.id, captured.name, captured.types[0].type.name, captured.weight, captured.height)
-        
         const valuesPokemon: Array<string | number> = []
         const listDefaltValue: string[] = ['Number', 'Name', 'Type', 'Weight', "Height"]
         const listOfValues: HTMLUListElement[] = Array.from(document.querySelectorAll<HTMLUListElement>('.list-icon'))
@@ -62,6 +61,7 @@ function getPokemon(){
             return value.textContent = captured.abilities[index].ability.name
         })
     })
+    changeTemplate()
 }
 inputSubmit.addEventListener('click', () => {
     getPokemon()

@@ -18,7 +18,7 @@ export class Pokemon {
     async move(moviment) {
         const lines = [
             `${this.namePokemon} usou ${moviment}!`,
-            `${chooseType('fire')}`,
+            `${chooseType(this.type)}`,
             "Uau! em cheio..."
         ];
         lines.forEach(async (line) => {
